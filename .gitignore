@@ -11,8 +11,9 @@
 .mtj.tmp/
 
 #targer and stugg
-*/target
-/.idea
+*target*
+target/*
+.idea/
 
 # Package Files #
 *.jar
