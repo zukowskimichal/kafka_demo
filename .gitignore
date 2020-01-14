@@ -6,7 +6,7 @@
 
 # BlueJ files
 *.ctxt
-
+*.properties
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -21,6 +21,7 @@ target/*
 *.nar
 *.ear
 *.zip
+*.iml
 *.tar.gz
 *.rar
 

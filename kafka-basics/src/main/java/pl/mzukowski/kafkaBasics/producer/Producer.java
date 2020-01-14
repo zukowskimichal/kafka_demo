@@ -1,4 +1,4 @@
-package pl.mzukowski.kafkaSimpleProject;
+package pl.mzukowski.kafkaBasics.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;

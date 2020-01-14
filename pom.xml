@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.mzukowski</groupId>
     <artifactId>kafkaSimpleProject</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <build>
         <plugins>
             <plugin>
@@ -20,21 +22,66 @@
             </plugin>
         </plugins>
     </build>
+    <modules>
+        <module>kafka-basics</module>
+        <module>kafka-producer-twitter</module>
+    </modules>
     <properties>
         <kafka.version>2.4.0</kafka.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <twitter-hbc.version>2.2.0</twitter-hbc.version>
+        <twitter4j.version>4.0.7</twitter4j.version>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>${kafka.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>28.2-jre</version>
+            </dependency>
+            <!--         twitter project-->
+
+            <!-- https://mvnrepository.com/artifact/com.twitter/hbc-core -->
+            <dependency>
+                <groupId>com.twitter</groupId>
+                <artifactId>hbc-core</artifactId>
+                <version>${twitter-hbc.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core -->
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-core</artifactId>
+                <version>${twitter4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>transport</artifactId>
+                <version>7.5.1</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
 
 </project>
